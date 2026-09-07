@@ -8,7 +8,7 @@ properties:
   containers:
     - name: nginx
       properties:
-        image: finalprojectacr.azurecr.io/final-project-nginx:latest
+        image: finalprojectacr.azurecr.io/final-project-nginx:${NGINX_TAG}
         ports:
           - port: 80
             protocol: TCP
@@ -19,7 +19,7 @@ properties:
 
     - name: frontend
       properties:
-        image: finalprojectacr.azurecr.io/final-project-frontend:latest
+        image: finalprojectacr.azurecr.io/final-project-frontend:${FRONTEND_TAG}
         environmentVariables:
           - name: VITE_BACKEND_URL
             value: "http://localhost:80/api"
@@ -30,7 +30,7 @@ properties:
 
     - name: backend
       properties:
-        image: finalprojectacr.azurecr.io/final-project-backend:latest
+        image: finalprojectacr.azurecr.io/final-project-backend:${BACKEND_TAG}
         environmentVariables:
           - name: SQL_SERVER
             value: "final-proejct-sql-server.database.windows.net"
@@ -57,7 +57,7 @@ properties:
 
     - name: cache
       properties:
-        image: finalprojectacr.azurecr.io/final-project-cache:latest
+        image: finalprojectacr.azurecr.io/final-project-cache:${CACHE_TAG}
         environmentVariables:
           - name: REDIS_PASSWORD
             value: ${REDIS_PASSWORD}
