@@ -19,7 +19,7 @@ properties:
 
     - name: frontend
       properties:
-        image: finalprojectacr.azurecr.io/final-project-frontend:v2
+        image: finalprojectacr.azurecr.io/final-project-frontend:latest
         environmentVariables:
           - name: VITE_BACKEND_URL
             value: "http://localhost:80/api"
