@@ -66,10 +66,9 @@ properties:
             cpu: 0.5
             memoryInGB: 0.5
 
-  imageRegistryCredentials:
-  - server: finalprojectacr.azurecr.io
-    username: finalprojectacr
-    password: ${{ ACR_CREDENTIALS }}
+  # imageRegistryCredentials:
+  # - server: finalprojectacr.azurecr.io
+  #   username: finalprojectacr
 
   ipAddress:
     type: Public

@@ -131,7 +131,10 @@ jobs:
                 az acr login --name ${{ env.ACR_NAME }}
 
             - name: Deploy Azure Container Instance 
-              env: 
-                ACR_CREDENTIALS: ${{ secrets.ACR_CREDENTIALS }}
               run: | 
-                az container create --resource-group ${{ env.RESOURCE_GROUP }} --file azure-aci.yml
+                az container create \
+                  --resource-group ${{ env.RESOURCE_GROUP }} \
+                  --file azure-aci.yml \
+                  --registory-login-server finalprojectacr.azurecr.io \
+                  --registory-username finalprojectacr
+                  --registry-password ${{ secrets.ACR_CREDENTIALS }} 
