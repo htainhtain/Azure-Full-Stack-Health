@@ -14,9 +14,6 @@ import (
 	_ "github.com/microsoft/go-mssqldb"
 )
 
-// testing changes in backend
-// testing changes in backend
-
 func main() {
 	mux := http.NewServeMux()
 

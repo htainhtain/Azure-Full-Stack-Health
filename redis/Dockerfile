@@ -7,3 +7,5 @@ RUN adduser -D myredis && chown -R myredis:myredis /data
 USER redis
 
 EXPOSE 6379
+
+# testing changes
