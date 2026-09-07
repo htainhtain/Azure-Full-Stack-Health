@@ -3,7 +3,7 @@ import { keyvault, pingpong, redis, sql } from "./pingpong";
 export const services = [
   {
     id: "frontend",
-    name: "Frontend",
+    name: "Frontend v2",
     description: "React + Vite",
     endpoint: null,
   },
