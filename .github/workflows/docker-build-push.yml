@@ -112,9 +112,5 @@ jobs:
               env:
                 ACR_CREDENTIALS: ${{ secrets.ACR_CREDENTIALS }}
                 REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
-                FRONTEND_TAG: $FRONTEND_TAG
-                BACKEND_TAG: $BACKEND_TAG
-                CACHE_TAG: $CACHE_TAG
-                NGINX_TAG: $NGINX_TAG
               run: | 
                 az container create --resource-group ${{ env.RESOURCE_GROUP }} --file azure-aci.yml
