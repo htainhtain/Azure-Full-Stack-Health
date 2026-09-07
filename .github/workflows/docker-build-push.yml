@@ -133,5 +133,6 @@ jobs:
             - name: Deploy Azure Container Instance
               env:
                 ACR_CREDENTIALS: ${{ secrets.ACR_CREDENTIALS }}
+                REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
               run: | 
                 az container create --resource-group ${{ env.RESOURCE_GROUP }} --file azure-aci.yml
