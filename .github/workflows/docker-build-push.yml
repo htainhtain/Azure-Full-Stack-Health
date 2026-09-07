@@ -99,22 +99,22 @@ jobs:
 
             - name: Get latest Tags
               run: |
-                NGINX_TAG=$(az acr repository show-tags --name ${{ env.ACR_LOGIN_SERVER }} --repository final-project-nginx --orderby time_desc --top 1 --output tsv )
+                NGINX_TAG=$(az acr repository show-tags --name ${{ env.ACR_NAME }} --repository final-project-nginx --orderby time_desc --top 1 --output tsv )
                 echo "NGINX_TAG=$NGINX_TAG" >> "$GITHUB_ENV"
-                CACHE_TAG=$(az acr repository show-tags --name ${{ env.ACR_LOGIN_SERVER }} --repository final-project-cache --orderby time_desc --top 1 --output tsv )
+                CACHE_TAG=$(az acr repository show-tags --name ${{ env.ACR_NAME }} --repository final-project-cache --orderby time_desc --top 1 --output tsv )
                 echo "CACHE_TAG=$CACHE_TAG" >> "$GITHUB_ENV"
-                FRONTEND_TAG=$(az acr repository show-tags --name ${{ env.ACR_LOGIN_SERVER }} --repository final-project-frontend --orderby time_desc --top 1 --output tsv )
+                FRONTEND_TAG=$(az acr repository show-tags --name ${{ env.ACR_NAME }} --repository final-project-frontend --orderby time_desc --top 1 --output tsv )
                 echo "FRONTEND_TAG=$FRONTEND_TAG" >> "$GITHUB_ENV"
-                BACKEND_TAG=$(az acr repository show-tags --name ${{ env.ACR_LOGIN_SERVER }} --repository final-project-backend --orderby time_desc --top 1 --output tsv )
+                BACKEND_TAG=$(az acr repository show-tags --name ${{ env.ACR_NAME }} --repository final-project-backend --orderby time_desc --top 1 --output tsv )
                 echo "BACKEND_TAG=$BACKEND_TAG" >> "$GITHUB_ENV"
 
             - name: Deploy Azure Container Instance
               env:
                 ACR_CREDENTIALS: ${{ secrets.ACR_CREDENTIALS }}
                 REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
-                FRONTEND_TAG: ${{ github.sha }}
-                BACKEND_TAG: ${{ github.sha }}
-                CACHE_TAG: ${{ github.sha }}
-                NGINX_TAG: ${{ github.sha }}
+                FRONTEND_TAG: $FRONTEND_TAG
+                BACKEND_TAG: $BACKEND_TAG
+                CACHE_TAG: $CACHE_TAG
+                NGINX_TAG: $NGINX_TAG
               run: | 
                 az container create --resource-group ${{ env.RESOURCE_GROUP }} --file azure-aci.yml
