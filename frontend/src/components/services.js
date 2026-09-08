@@ -15,7 +15,7 @@ export const services = [
   },
   {
     id: "sql",
-    name: "Postgres SQL",
+    name: "Azure SQL",
     description: "Database connection",
     endpoint: sql,
   },

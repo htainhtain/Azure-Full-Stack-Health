@@ -82,17 +82,17 @@ GitHub Actions is used to automate the application's CI/CD pipeline instead of m
 
 The workflow generally follows these steps:
 
-1. **Detect Changes**
+1. **Detect Changes** <br>
 GitHub Actions checks which services have changed, such as the frontend or backend.
-2. **Build, Tag and Push Docker Images**
+2. **Build, Tag and Push Docker Images** <br>
 If a service has changed, GitHub Actions builds a new Docker image for that service.
 The newly built images are tagged with the Azure Container Registry address and image name.
 The Docker images are pushed to Azure Container Registry (ACR).
-3. **Get the Latest Images**
+3. **Get the Latest Images** <br>
 Before deployment, the workflow determines the latest image tags for the required services.
-4. **Deploy to ACI**
+4. **Deploy to ACI** <br>
 GitHub Actions uses azure-aci.yml to deploy the application to Azure Container Instances.
-5. **Run the Application**
+5. **Run the Application** <br>
 The ACI container group runs the Nginx, frontend, backend, and Redis containers. Nginx receives requests from users and forwards API requests to the backend, while the backend communicates with Redis internally.
 
 ### Azure Prerequisites
