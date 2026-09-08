@@ -10,6 +10,12 @@ There are areas of the application that cound be improved but I decided to stop 
 
 In this repo, I will go over deployment stages, errors I troubleshooted and explanation on the steps.
 
+## Final
+
+
+
+Once your Frontend, backend, Nginx, Azure Key Vault, and SQL are working, Frontend will show you everything is working.
+
 ## Tech stacks
 
 - Frontend: React

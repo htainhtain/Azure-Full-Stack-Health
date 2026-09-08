@@ -43,7 +43,7 @@ properties:
           - name: REDIS_PORT
             value: "6379"
           - name: AZURE_KEY_VAULT_NAME
-            value: "final-project-kv3"
+            value: "final-project-kv4"
           - name: AZURE_KEY_VAULT_SECRET
             value: "secret"
             # secret value = key

@@ -18,8 +18,6 @@ WORKDIR /usr/local/app
 
 EXPOSE 5001
 
-# ENV VITE_BACKEND_URL="http://localhost:8080"
-
 COPY --from=build-stage /usr/local/app/dist ./dist
 
 RUN npm install -g serve && adduser -D appuser && chown appuser /usr/local/app

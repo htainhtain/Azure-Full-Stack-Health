@@ -5,5 +5,3 @@ EXPOSE 80
 WORKDIR /etc/nginx/
 
 COPY nginx.conf nginx.conf
-
-# test
