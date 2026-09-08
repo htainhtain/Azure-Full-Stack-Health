@@ -1,6 +1,6 @@
 # Final Project - Azure Full Stack Health
 
-![Azure Full Stack Health Dashboard](images/dashboardnew.png)
+![Azure Full Stack Health Dashboard](images/dashboard.png)
 
 Full-Stack Applicaiton with **React**, **Go**, **Docker** and **Azure**
 
