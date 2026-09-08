@@ -1,4 +1,6 @@
-# Final Project - AZ-900
+# Final Project - Azure Full Stack Health
+
+![Azure Full Stack Health Dashboard](images/dashboard.png)
 
 Full-Stack Applicaiton with React, Go, Docker and Azure
 
@@ -11,8 +13,6 @@ There are areas of the application that cound be improved but I decided to stop 
 In this repo, I will go over deployment stages, errors I troubleshooted and explanation on the steps.
 
 ## Final
-
-
 
 Once your Frontend, backend, Nginx, Azure Key Vault, and SQL are working, Frontend will show you everything is working.
 
@@ -179,7 +179,7 @@ Redis credentials
 Application secrets
 Other sensitive configuration values
 
-Before managing secrets or keys in the Key Vault, make sure the appropriate Azure RBAC permissions are assigned to your account.
+Before managing secrets or keys in the Key Vault, make sure the appropriate Azure RBAC permissions such as Key Vault Administrator are assigned to your account. Otherwise, you won't be able to add secrets.
 
 The ACI system-assigned managed identity should also be granted the appropriate role, such as Key Vault Secrets User, so the application can read secrets from the vault.
 
@@ -217,3 +217,6 @@ Docker introduced the pull limit and it is effecting the testing. That's why I c
 
 5. Why not VM?
 Like previously mentioned, we would like to manage as little as possible. Also, getting a VM is a bit expensive and hard to get cheap one.
+
+6. Improvement?
+It will be better if we automate the azure deployment such as container group, key vault, managed identity, and Database. 
